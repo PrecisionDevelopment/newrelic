@@ -87,6 +87,8 @@ template "/etc/init.d/#{node['newrelic']['meetme-plugin']['service_name']}" do
   variables(
     variables
   )
+  action :create
+  notifies :restart, "service[#{node['newrelic']['meetme-plugin']['service_name']}]", :delayed
 end
 
 service node['newrelic']['meetme-plugin']['service_name'] do
