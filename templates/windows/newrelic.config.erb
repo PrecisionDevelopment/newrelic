@@ -5,10 +5,10 @@
 <configuration xmlns="urn:newrelic-config" agentEnabled="true">
   <service licenseKey="<%= @license %>" ssl="true" />
   <application>
-    <% if @app_name.nil? %>
+    <% if @appname.nil? %>
      <name>My Application</name>
     <% else %>
-     <name><%= @app_name %></name>
+     <name><%= @appname %></name>
     <% end %>
   </application>
   <% if @loglevel.nil? %>
